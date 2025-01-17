@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 
@@ -55,7 +55,7 @@
                     
                     if($countdata > 0){
                         if(password_verify($password, $data['password'])){
-                            $_SESSION['username'] = $data['usermame'];
+                            $_SESSION['username'] = $data['username'];
                             $_SESSION['login'] = true;
                             header('Location: ../admin');
                         }else{
