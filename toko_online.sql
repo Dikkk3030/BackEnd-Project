@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.1deb3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jan 2025 pada 07.43
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: localhost:3306
+-- Waktu pembuatan: 17 Jan 2025 pada 09.04
+-- Versi server: 10.11.8-MariaDB-0ubuntu0.24.04.1
+-- Versi PHP: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,6 +67,29 @@ CREATE TABLE `produk` (
   `ketersediaan_stok` enum('habis','tersedia') DEFAULT 'tersedia'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `notlp` varchar(15) DEFAULT NULL,
+  `alamat` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `email`, `password`, `name`, `notlp`, `alamat`) VALUES
+(1, 'amba@ngawi.com', '$2y$10$XHEXld6gDURzzAOs5uXnr.XmpX/hdZW7OoTlDOfieXxLlJ69aoe42', NULL, NULL, NULL),
+(2, 'siimut@ngawi.com', '$2y$10$0aio9zfN/MeOJp1PEtCkD.JGZ7ski2jN8QInoHJHvmfjwETpgGFmm', NULL, NULL, NULL);
+
 --
 -- Indexes for dumped tables
 --
@@ -92,6 +115,12 @@ ALTER TABLE `produk`
   ADD KEY `kategori_produk` (`kategori_id`);
 
 --
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -112,6 +141,12 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `produk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
