@@ -27,6 +27,8 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel `admin`
 --
 
+CREATE DATABASE toko_online;
+
 CREATE TABLE `admin` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(50) DEFAULT NULL,
