@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <nav class="navbar navbar-expand-lg navbar-light">
      <div class="container-fluid">
          <a class="navbar-brand" href="#">Membatik</a>
@@ -19,8 +22,14 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                    </li> 
+                <?php
+                    if (isset($_SESSION['loginuser']) && $_SESSION['loginuser'] == true) {
+                        echo '<a class="nav-link" href="accountinfo.php">Info Akun</a>';
+                    } else {
+                        echo '<a class="nav-link" href="login.php">Login</a>';
+                    }
+                ?>
+                </li> 
             
   </div>
   </div>
