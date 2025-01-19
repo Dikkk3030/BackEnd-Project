@@ -1,24 +1,95 @@
-.banner {
-    height: 80vh;
-    /* di url ('taruk gambar banner disini) */
-    background: linear-gradient(rgba(0,0,0,0,4), rgba (0,0,0,0,4)),url ('');
+.warna1 {
+    background-color:#876445 ;
 }
 
-.hightlighted-kategori {
+.warna2 {
+    background-color: #CA965C ;
+}
+
+.warna3 {
+    background-color:#EEC373 ;
+}
+
+.warna4 {
+    background-color: #F4DFBA;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/backround1.jpg');
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment:scroll; 
+}
+.h3{
+    color:#CA965C ;
+}
+#nav-bar {
+    height: 80px;
+    font-size: 20px;
+    margin: 0;
+    padding: 30;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #876445 !important; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    background-color: #876445 !important; 
+    padding: 30 !important;
+}
+
+.nav-link {
+    color: #ffffff !important; 
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #EEC373 !important; 
+}
+
+.navbar-brand {
+    color: #ffffff !important; 
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; 
+}
+
+
+.banner {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/banner1.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.highlighted-kategori {
     border: solid;
     height: 250px;
 }
 
 .kategori-batik-pria {
       /* di url ('taruk gambar batik laris disini) */
-    background: linear-gradient(rgba(0,0,0,0,4), rgba (0,0,0,0,4)),url ('');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .kategori-batik-wanita { 
     /* di url ('taruk gambar batik laris disini) */
-  background: linear-gradient(rgba(0,0,0,0,4), rgba (0,0,0,0,4)),url ('');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.kategori-batik-anak {
+    /* di url ('taruk gambar batik laris disini) */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -29,7 +100,7 @@
 }
 
 .no-decoration :hover {
-    color:pink
+    color: #EEC373
 }
 
 .text-harga {
