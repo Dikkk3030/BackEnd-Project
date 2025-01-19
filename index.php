@@ -1,6 +1,6 @@
 <?php
     require_once 'koneksi.php';
-    $queryproduk = mysqli_query($conn,"SELECT id, nama, harga, foto, detail FROM produk LIMIT 6")
+    $queryProduk = mysqli_query($conn,"SELECT id, nama, harga, foto, detail FROM produk LIMIT 6")
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
                 <form method="get" action="produk.php">
                     <div class="input-group input-group-lg my-4">
                         <input type="text" class="form-control" placeholder="Nama Batik....." aria-label="NamaBatik" aria-describedby="basic-addon2" name="keyword">
-                        <button type="submit" class="btn warna2 text-white">Search</button>
+                        <button type="submit" class="btn warna2 text-white">Search</button>8
                     </div>
                 </form>
             </div>
@@ -69,77 +69,21 @@
                 <h3>Produk</h3>
         <!-- Produk Card foto bisa di isi di src-->
                 <div class="row mt-5">
+                    <?php while ($data = mysqli_fetch_array($queryProduk)) {?>
                     <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                    <div class="card h-100">
+                        <div class="image-box">
+                        <img class="card-img-top" src="assets/<?php echo $data ['foto'] ?>.jpg" alt="Card image cap">
+                        </div>
                             <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                                <h5 class="card-title "><?php echo $data ['nama']?></h5>
+                                    <p class="card-text text-truncate"><?php echo $data ['detai;']?></p>
+                                    <p class="card-text text-harga"><?php echo $data ['harga']?></p>
+                                    <a href="produk-detail.php?nama=<?php echo $data['nama']; ?>="btn btn-primary warna2 text-white"> Lihat Detail</a>
                             </div>
                         </div> 
                     </div>
-
-                    <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 mb-3">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Nama Produk</h5>
-                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <p class="card-text text-harga">Rp.999.999</p>
-                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
-                            </div>
-                        </div> 
-                    </div>
+                    <?php }  ?>
                 </div>
             </div>
         </div>

@@ -106,3 +106,14 @@ body {
 .text-harga {
     font-size: 20px;
 }
+
+.image-box {
+    height: 200px;
+}
+
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
