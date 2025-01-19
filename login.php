@@ -92,7 +92,7 @@
                         <button type="submit" class="btn btn-primary btn-block" name="loginbtn">Login</button>
                     </div>
                 </form>
-                <p class="text-center m-2">Belum punya akun? <a href="#" class="text-brown">Daftar di sini</a></p>
+                <p class="text-center m-2">Belum punya akun? <a href="register.php" class="text-brown">Daftar di sini</a></p>
             </div>
 
         </div>
@@ -112,7 +112,7 @@
                             header('Location: index.php');
                         }else{
                             ?>
-        <div class="alert alert-danger mt-2" role="alert">
+            <div class="alert alert-danger mt-2" role="alert">
             Email dan password yang anda masukan salah
         </div>
         <?php
