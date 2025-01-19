@@ -1,8 +1,9 @@
 <?php 
     session_start();
     require_once 'koneksi.php' ;
-
-    require_once 'sessionUser.php';
+    if($_SESSION['loginuser']== true){
+        header(header: 'Location: index.php');
+    }
 ?>
 
 <!DOCTYPE html>
