@@ -5,47 +5,98 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Floating Login Form</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .login-box {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-image {
+            width: 300px;
+            /* Atur lebar gambar sesuai kebutuhan */
+            background: url('assets/batik-theme.jpg') no-repeat center center;
+            /* Ganti dengan URL gambar Anda */
+            background-size: cover;
+        }
+
+        .login-form {
+            padding: 20px;
+            width: 300px;
+            /* Atur lebar form sesuai kebutuhan */
+        }
+
+        .btn-primary {
+            background-color: #8B4513;
+            /* Warna cokelat untuk tombol */
+            border-color: #8B4513;
+            /* Border cokelat untuk tombol */
+        }
+
+        .btn-primary:hover {
+            background-color: #A0522D;
+            /* Warna cokelat lebih terang saat hover */
+            border-color: #A0522D;
+            /* Border cokelat lebih terang saat hover */
+        }
+
+        .text-brown {
+            color: #FFBB70;
+            /* Warna teks cokelat */
+        }
+
+        .text-brown :hover {
+            color: #FFBB70;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
-<style>
-    .main {
-        height: 100vh;
-    }    
-
-    .login-box{
-        width: 500px;
-        height: 300px;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
-</style>
-
 <body>
-    <div class="main d-flex flex-column justify-content-center align-items-center">
-        <div class="login-box p-5 shadow">
-            <form action="" method="post">
-                <h1>Login</h1>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control">
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control">
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-success form-control mt-3" name="loginbtn">Submit</button>
-                </div>
-            </form>
-        </div>
+    <div class="login-container">
+        <div class="login-box shadow">
+            <div class="login-image"></div>
+            <div class="login-form">
+                <h2 class="text-center">Login</h2>
+                <form method="post" action="">
+                    <div class="form-group m-2">
+                        <label for="email" class="">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"
+                            required>
+                    </div>
+                    <div class="form-group m-2">
+                        <label for="password" class="">Password</label>
+                        <input type="password" class="form-control mb-2" id="password" name="password"
+                            placeholder="Password" required>
+                        <button type="submit" class="btn btn-primary btn-block" name="loginbtn">Login</button>
+                    </div>
+                </form>
+                <p class="text-center m-2">Belum punya akun? <a href="#" class="text-brown">Daftar di sini</a></p>
+            </div>
 
-        <div class="mt-3" style="width: 500px;">
-            <?php
+        </div>
+        <?php
                 if(isset($_POST['loginbtn'])){
                     $email = htmlspecialchars($_POST['email']);
                     $password = htmlspecialchars($_POST['password']);
@@ -61,22 +112,25 @@
                             header('Location: index.php');
                         }else{
                             ?>
-                            <div class="alert alert-danger" role="alert">
-                                Email dan password yang anda masukan salah
-                            </div>
-                            <?php
+        <div class="alert alert-danger mt-2" role="alert">
+            Email dan password yang anda masukan salah
+        </div>
+        <?php
                         }
                     }else {
                         ?>
-                            <div class="alert alert-danger" role="alert">
-                                Email dan password yang anda masukan salah
-                            </div>
-                        <?php
+        <div class="alert alert-danger mt-2" role="alert">
+            Email dan password yang anda masukan salah
+        </div>
+        <?php
                     }
                 }
             
             ?>
-        </div>
     </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/fontawesome/js/all.min.js"></script>
 </body>
+
 </html>
