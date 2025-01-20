@@ -29,7 +29,7 @@ body {
     height: 80px;
     font-size: 20px;
     margin: 0;
-    padding: 30;
+    padding: 50;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -39,7 +39,7 @@ body {
 
 .navbar {
     background-color: #876445 !important; 
-    padding: 30 !important;
+    padding: 50 !important;
 }
 
 .nav-link {
@@ -112,6 +112,24 @@ body {
 }
 
 .image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.seemore {
+    width: 75%;
+    height: 25px;
+    margin: 20;
+}
+
+.text-harga{
+    font-size: 22px;
+    color: #CA965C;
+}
+
+.produk-terkait-image {
     height: 100%;
     width: 100%;
     object-fit: cover;
