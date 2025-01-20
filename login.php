@@ -1,7 +1,7 @@
 <?php 
     session_start();
     require_once 'koneksi.php' ;
-    if($_SESSION['loginuser']== true){
+    if($_SESSION['loginuser'] == true){
         header(header: 'Location: index.php');
     }
 ?>
@@ -90,9 +90,11 @@
                     </div>
                     <div class="form-group m-2">
                         <label for="password" class="">Password</label>
-                        <input type="password" class="form-control mb-2" id="password" name="password"
-                            placeholder="Password" required>
-                        <button type="submit" class="btn btn-primary btn-block" name="loginbtn">Login</button>
+                        <input type="password" class="form-control mb-2" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="form-group m-2">
+                        <button style="width: 100%;" type="submit" class="btn btn-primary btn-block" name="loginbtn">Login</button>
                     </div>
                 </form>
                 <p class="text-center m-2">Belum punya akun? <a href="register.php" class="text-brown">Daftar di sini</a></p>
@@ -114,22 +116,25 @@
                             $_SESSION['loginuser'] = true;
                             header('Location: index.php');
                         }else{
-                            ?>
+                            
+            ?>
             <div class="alert alert-danger mt-2" role="alert">
-            Email dan password yang anda masukan salah
-        </div>
+                Email dan password yang anda masukan salah
+            </div>
         <?php
                         }
-                    }else {
-                        ?>
+                }else {
+        ?>
+
         <div class="alert alert-danger mt-2" role="alert">
             Email dan password yang anda masukan salah
         </div>
+
         <?php
                     }
                 }
             
-            ?>
+        ?>
     </div>
 
     <script src="/bootstrap/js/bootstrap.bundle.js"></script>

@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="form-group m-2">
-                        <button type="submit" class="btn btn-primary btn-block" name="registerbtn">Daftar</button>
+                        <button type="submit" class="btn btn-primary btn-block" style="width: 100%;" name="registerbtn">Daftar</button>
                     </div>
 
                 </form>
