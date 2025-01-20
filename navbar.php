@@ -12,7 +12,7 @@
      </a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-             <ul class="navbar-nav ms-auto fs-2">
+             <ul class="navbar-nav ms-auto fs-5">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home </a>
                 </li>
@@ -31,7 +31,7 @@
                 ?>
                 </li> 
                 <script src="bootstrap/js/bootstrap.bundle.js"></script>
-                <script src="/fontawesome/js/all.min.js"></script>
+                <script src="fontawesome/js/all.min.js"></script>
 </body>
   </div>
   </div>

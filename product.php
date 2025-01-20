@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Online</title>
+    <title>YudiKarya - Product</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -36,34 +36,33 @@
     </div>
 
 
-      <!-- Halaman Produk -->
-        <div class="container-fluid py5">
-            <div class="container text-center">
-                <h3>Produk</h3>
-        <!-- Produk Card foto bisa di isi di src-->
+<div class="container-fluid py-5">
+    <div class="container text-center">
+        <h3>Produk</h3>
+        <div class="row"> <!-- Tambahkan div row di sini -->
         <?php
-        if ($result->num_rows > 0) {
-        // Output data dari setiap baris
-            while($product = $result->fetch_assoc()) {
-            echo '<div class="col-sm-6 col-md-4 mb-3">';
-            echo '    <div class="card">';
-            echo '        <img class="card-img-top product-img" src=" image/' . $product["foto"] . '" alt="Card image cap">';
-            echo '        <div class="card-body">';
-            echo '            <h5 class="card-title">' . $product["nama"] . '</h5>';
-            echo '            <p class="card-text text-harga">' . $product["harga"] . '</p>';
-            echo '            <a href="#" class="btn btn-primary warna2 text-white" style="width: 100%;">Lihat detail</a>';
-            echo '        </div>';
-            echo '    </div>';
-            echo '</div>';
-        }
-        } else {
-            echo "Tidak ada produk yang ditemukan.";
-        }
-        $conn->close();
+            if ($result->num_rows > 0) {
+                // Output data dari setiap baris
+                while($product = $result->fetch_assoc()) {
+                    echo '<div class="col-sm-6 col-md-4 mb-3">'; // 2 kolom di layar kecil, 3 kolom di layar sedang
+                    echo '    <div class="card">';
+                    echo '        <img class="card-img-top product-img" src="image/' . $product["foto"] . '" alt="Card image cap">';
+                    echo '        <div class="card-body">';
+                    echo '            <h5 class="card-title">' . $product["nama"] . '</h5>';
+                    echo '            <p class="card-text text-harga">Rp. ' . $product["harga"] . '</p>';
+                    echo '            <a href="product-detail.php?id=' . $product['id'] . '" class="btn btn-primary warna2 text-white" style="width: 100%;">Lihat detail</a>'; 
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div>';
+                }
+            } else {
+                echo "Tidak ada produk yang ditemukan.";
+            }
+            $conn->close();
         ?>
-
-            </div>
-        </div>
+        </div> <!-- Tutup div row di sini -->
+    </div>
+</div>
 
  <!-- Tentang Kami  -->
       <div class="container-fluid warna3 py-5">

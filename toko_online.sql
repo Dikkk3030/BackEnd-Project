@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 20 Jan 2025 pada 12.12
+-- Waktu pembuatan: 20 Jan 2025 pada 20.09
 -- Versi server: 10.11.8-MariaDB-0ubuntu0.24.04.1
 -- Versi PHP: 8.3.6
 
@@ -43,6 +43,20 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `detail_pesanan`
+--
+
+CREATE TABLE `detail_pesanan` (
+  `id_detpes` int(10) NOT NULL,
+  `id_pesanan` int(10) NOT NULL,
+  `id_produk` int(10) NOT NULL,
+  `jumlah` int(10) NOT NULL,
+  `subtotal` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `kategori`
 --
 
@@ -56,7 +70,8 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nama`) VALUES
-(1, 'Pria');
+(1, 'Pria'),
+(2, 'Perempuan');
 
 -- --------------------------------------------------------
 
@@ -83,9 +98,18 @@ CREATE TABLE `produk` (
   `nama` varchar(255) DEFAULT NULL,
   `harga` double DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
-  `detail` enum('S','M','L','XL') DEFAULT NULL,
+  `ukuran` enum('S','M','L','XL') DEFAULT NULL,
   `ketersediaan_stok` enum('habis','tersedia') DEFAULT 'tersedia'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `produk`
+--
+
+INSERT INTO `produk` (`id`, `kategori_id`, `nama`, `harga`, `foto`, `ukuran`, `ketersediaan_stok`) VALUES
+(3, 2, 'Dress Batik Putih', 450000, 'ZbM23cgDtD.jpg', 'L', 'tersedia'),
+(4, 2, 'Dress Batik Putih', 70000, '2l1kbiQOmD.jpg', 'XL', 'tersedia'),
+(5, 1, 'Batik Hitam Lengan Panjang', 370000, 'ElQl3tDG1v.jpg', 'L', 'tersedia');
 
 -- --------------------------------------------------------
 
@@ -121,6 +145,12 @@ INSERT INTO `user` (`id_user`, `email`, `password`, `name`, `notlp`, `alamat`) V
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `detail_pesanan`
+--
+ALTER TABLE `detail_pesanan`
+  ADD PRIMARY KEY (`id_detpes`);
 
 --
 -- Indeks untuk tabel `kategori`
@@ -160,10 +190,16 @@ ALTER TABLE `admin`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `detail_pesanan`
+--
+ALTER TABLE `detail_pesanan`
+  MODIFY `id_detpes` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`
@@ -175,7 +211,7 @@ ALTER TABLE `pesanan`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

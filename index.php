@@ -1,6 +1,5 @@
 <?php
     require_once 'koneksi.php';
-    $queryproduk = mysqli_query($conn,"SELECT id, nama, harga, foto, ukuran FROM produk LIMIT 6");
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +36,7 @@
     <!-- Highlighted kategori -->
      <div class="container-fluid py-5">
         <div class="container text-center">
-            <h3>Kategori Terlaris</h3>
+            <h3>YudiKarya - Dashboard</h3>
             <div class="row mt-5">
                 <!-- Kalo nambahin kategori copy paste dari Div ini sampai /div pertama sama gambar di isi di css -->
                     <div class="col-md-4 mb-3">
@@ -96,7 +95,7 @@
       </div>
 
 <!-- Sampai di Menit 45.27 Video ke part 6 (nunggu nama database karena mau di input) -->
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../fontawesome/js/all.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
 </body>
 </html> 
