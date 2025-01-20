@@ -1,6 +1,5 @@
 <?php
     require_once 'koneksi.php';
-    $queryproduk = mysqli_query($conn,"SELECT id, nama, harga, foto, ukuran FROM produk LIMIT 6");
 ?>
 
 <!DOCTYPE html>
@@ -14,20 +13,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+    <h1>
+        Ini adalah laman Pengguna
+    </h1>
+
 <?php
     require "navbar.php"
 ?>
     <!-- Banner -->
     <div class="container-fluid banner d-flex align-items-center">
         <div class="container text-center text-white">
-            <h1>Yudikarya Batik</h1>
+            <h1>Toko Online Batik</h1>
             <h2>Mau cari Batik?</h2>
             <!-- Search bar -->
             <div class="col-md-8 offset-md-2">
                 <form method="get" action="produk.php">
                     <div class="input-group input-group-lg my-4">
                         <input type="text" class="form-control" placeholder="Nama Batik....." aria-label="NamaBatik" aria-describedby="basic-addon2" name="keyword">
-                        <button type="submit" class="btn btn-outline-warning warna2 text-white">Search</button>
+                        <button type="submit" class="btn warna2 text-white">Search</button>
                     </div>
                 </form>
             </div>
@@ -42,17 +45,17 @@
                 <!-- Kalo nambahin kategori copy paste dari Div ini sampai /div pertama sama gambar di isi di css -->
                     <div class="col-md-4 mb-3">
                         <div class="highlighted-kategori kategori-batik-pria d-flex justify-content-center align-items-center">
-                            <h4 class="text-white"><a class="no-decoration" href="product.php?">Batik Pria</a></h4>
+                            <h4 class="text-white"><a class="no-decoration" href="produk.php?/kategori=BajuPria">Batik Pria</a></h4>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="highlighted-kategori kategori-batik-wanita d-flex justify-content-center align-items-center">
-                            <h4 class="text-white"><a class="no-decoration" href="product.php?">Batik Wanita</a></h4>
+                            <h4 class="text-white"><a class="no-decoration" href="produk.php?/kategori=BajuWanita">Batik Wanita</a></h4>
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="highlighted-kategori kategori-batik-anak d-flex justify-content-center align-items-center">
-                            <h4 class="text-white"><a class="no-decoration" href="product.php?">Batik Anak</a></h4>
+                            <h4 class="text-white"><a class="no-decoration" href="produk.php?/kategori=BajuAnak">Batik Anak</a></h4>
                     </div> 
                 </div>
             </div>
@@ -64,38 +67,94 @@
             <div class="container text-center">
                 <h3>Produk</h3>
         <!-- Produk Card foto bisa di isi di src-->
+
+
                 <div class="row mt-5">
-                    <?php while($data = mysqli_fetch_array($queryproduk)){ ?>
                     <div class="col-sm-6 col-md-4 mb-3">
                     <div class="card">
-                        <img class="card-img-top" src="assets/<?php echo $data['foto']; ?>" alt="Card image cap">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $data['nama']; ?></h5>
-                                    <p class="card-text text-truncate"><?php echo $data['ukuran']; ?></p>
-                                    <p class="card-text text-harga">Rp<?php echo $data['harga']; ?></p>
-                                    <a href="product-detail.php?nama=<?php echo $data['nama']; ?>" class="btn warna2 text-white">Lihat Detail</a>
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
                             </div>
                         </div> 
                     </div>
-                    <?php  } ?>
-                    <!-- Button see more -->
-                     <div class="seemore">
-                    <a href="product.php" class="btn btn-outline-warning warna1 mt-1 p-1 fs-1 text-white">See More</a>
+
+                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="assets/pog1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Produk</h5>
+                                    <p class="card-text text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-harga">Rp.999.999</p>
+                                    <a href="#" class="btn btn-primary warna2 text-white">Go somewhere</a>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
         </div>
 
  <!-- Tentang Kami  -->
-      <div class="container-fluid warna3 mt-5 py-5">
+      <div class="container-fluid warna3 py-5">
         <div class="container text-center">
             <h3>Tentang Kami</h3>
-            <p class="fs-5 mb-3">Selamat datang di Yudikarya, destinasi online untuk Anda yang mencari keindahan, kualitas, dan keunikan Batik Indonesia. Kami adalah toko e-commerce yang didedikasikan untuk memperkenalkan dan memasarkan karya seni Batik dari berbagai daerah di Indonesia, sekaligus mendukung para pengrajin lokal yang dengan penuh cinta menciptakan setiap helainya. Menjadi platform terdepan dalam memperkenalkan warisan budaya Batik Indonesia ke seluruh dunia, sembari memberikan pengalaman berbelanja yang nyaman, modern, dan aman. Kami percaya bahwa Batik bukan sekadar kain, tetapi sebuah cerita, tradisi, dan identitas. Dengan setiap pembelian di Yudikarya, Anda turut mendukung keberlanjutan seni dan budaya Indonesia.</p>
+            <p class="fs-5 mb-3">Selamat datang di Membatik, destinasi online untuk Anda yang mencari keindahan, kualitas, dan keunikan Batik Indonesia. Kami adalah toko e-commerce yang didedikasikan untuk memperkenalkan dan memasarkan karya seni Batik dari berbagai daerah di Indonesia, sekaligus mendukung para pengrajin lokal yang dengan penuh cinta menciptakan setiap helainya. Menjadi platform terdepan dalam memperkenalkan warisan budaya Batik Indonesia ke seluruh dunia, sembari memberikan pengalaman berbelanja yang nyaman, modern, dan aman. Kami percaya bahwa Batik bukan sekadar kain, tetapi sebuah cerita, tradisi, dan identitas. Dengan setiap pembelian di Membatik, Anda turut mendukung keberlanjutan seni dan budaya Indonesia.</p>
         </div>
       </div>
 
 <!-- Sampai di Menit 45.27 Video ke part 6 (nunggu nama database karena mau di input) -->
-    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../fontawesome/js/all.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="fontawesome/js/all.min.js"></script>
 </body>
 </html> 

@@ -47,7 +47,7 @@
             while($product = $result->fetch_assoc()) {
             echo '<div class="col-sm-6 col-md-4 mb-3">';
             echo '    <div class="card">';
-            echo '        <img class="card-img-top" src="' . $product["foto"] . '" alt="Card image cap">';
+            echo '        <img class="card-img-top product-img" src=" image/' . $product["foto"] . '" alt="Card image cap">';
             echo '        <div class="card-body">';
             echo '            <h5 class="card-title">' . $product["nama"] . '</h5>';
             echo '            <p class="card-text text-harga">' . $product["harga"] . '</p>';
