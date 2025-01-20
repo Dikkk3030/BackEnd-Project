@@ -82,23 +82,23 @@ body {
 
 .kategori-batik-pria {
       /* di url ('taruk gambar batik laris disini) */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/batikpria.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 .kategori-batik-wanita { 
     /* di url ('taruk gambar batik laris disini) */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/batikwanita.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 .kategori-batik-anak {
     /* di url ('taruk gambar batik laris disini) */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/pog1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/batikanak.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
 
 .no-decoration {

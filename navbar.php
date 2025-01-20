@@ -3,13 +3,16 @@
 ?>
 <nav class="navbar navbar-expand-lg navbar-light">
      <div class="container-fluid">
-         <a class="navbar-brand" href="#">Membatik</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+     <a class="navbar-brand" href="index.php">
+        <img src="assets/YUDIKARYA1.png" alt="YudiKarya Logo" style="height: 100px;">
+     </a>
+
+     <a class="navbar-brand" href="index.php">
+        <img src="assets/YUDIKARYAtext1.png" alt="YudiKarya Logo" style="height: 100px;">
+     </a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-             <ul class="navbar-nav ms-auto ">
+             <ul class="navbar-nav ms-auto fs-2">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home </a>
                 </li>
