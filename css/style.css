@@ -6,6 +6,10 @@
     background-color: #CA965C ;
 }
 
+.warna2 :hover{
+    background-color:#876445 ;
+}
+
 .warna3 {
     background-color:#EEC373 ;
 }
@@ -20,7 +24,7 @@ body {
     color: white;
     background-size: cover; 
     background-position: center; 
-    background-attachment:scroll; 
+    background-attachment:scroll;
 }
 .h3{
     color:#CA965C ;
@@ -29,7 +33,7 @@ body {
     height: 80px;
     font-size: 20px;
     margin: 0;
-    padding: 50;
+    padding: 30;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -39,7 +43,7 @@ body {
 
 .navbar {
     background-color: #876445 !important; 
-    padding: 50 !important;
+    padding: 30 !important;
 }
 
 .nav-link {
@@ -53,13 +57,6 @@ body {
 
 .navbar-brand {
     color: #ffffff !important; 
-}
-
-.navbar-brand-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
 }
 
 .navbar-toggler-icon {
@@ -112,33 +109,4 @@ body {
 
 .text-harga {
     font-size: 20px;
-}
-
-.image-box {
-    height: 200px;
-}
-
-.image-box img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.seemore {
-    width: 100%;
-    height: 25px;
-    margin: 20;
-}
-
-.text-harga{
-    font-size: 22px;
-    color: #CA965C;
-}
-
-.produk-terkait-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
 }
