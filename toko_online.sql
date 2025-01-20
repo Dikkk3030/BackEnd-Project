@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 17 Jan 2025 pada 09.04
+-- Waktu pembuatan: 20 Jan 2025 pada 12.12
 -- Versi server: 10.11.8-MariaDB-0ubuntu0.24.04.1
 -- Versi PHP: 8.3.6
 
@@ -26,8 +26,6 @@ SET time_zone = "+00:00";
 --
 -- Struktur dari tabel `admin`
 --
-
-CREATE DATABASE toko_online;
 
 CREATE TABLE `admin` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -53,6 +51,26 @@ CREATE TABLE `kategori` (
   `nama` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `nama`) VALUES
+(1, 'Pria');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id_pesanan` int(10) NOT NULL,
+  `id_user` int(10) NOT NULL,
+  `total_harga` double NOT NULL,
+  `catatan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- --------------------------------------------------------
 
 --
@@ -65,7 +83,7 @@ CREATE TABLE `produk` (
   `nama` varchar(255) DEFAULT NULL,
   `harga` double DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
-  `detail` text DEFAULT NULL,
+  `detail` enum('S','M','L','XL') DEFAULT NULL,
   `ketersediaan_stok` enum('habis','tersedia') DEFAULT 'tersedia'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -90,7 +108,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `email`, `password`, `name`, `notlp`, `alamat`) VALUES
 (1, 'amba@ngawi.com', '$2y$10$XHEXld6gDURzzAOs5uXnr.XmpX/hdZW7OoTlDOfieXxLlJ69aoe42', NULL, NULL, NULL),
-(2, 'siimut@ngawi.com', '$2y$10$0aio9zfN/MeOJp1PEtCkD.JGZ7ski2jN8QInoHJHvmfjwETpgGFmm', NULL, NULL, NULL);
+(2, 'siimut@ngawi.com', '$2y$10$0aio9zfN/MeOJp1PEtCkD.JGZ7ski2jN8QInoHJHvmfjwETpgGFmm', NULL, NULL, NULL),
+(3, 'rusdi@ngawi.com', '$2y$10$f35eoefzirerCAQy5bzFZeM1u2/BwvDfxPzUMa4xEm057h7A7HWNy', 'Rusdi', '0811234567890', 'ngawi'),
+(4, 'fuad47@ngawi.com', '$2y$10$PjvU7nSQd5hyMRbs.k3Ea.3iyBoNcIthXvF1IlMsDnSa3/t7W3w/y', 'Fuad 47', '081234567777', 'bogor');
 
 --
 -- Indexes for dumped tables
@@ -107,6 +127,13 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id_pesanan`),
+  ADD KEY `fk_user` (`id_user`);
 
 --
 -- Indeks untuk tabel `produk`
@@ -136,29 +163,42 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id_pesanan` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
+-- Ketidakleluasaan untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE;
+
+--
 -- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `kategori_produk` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
