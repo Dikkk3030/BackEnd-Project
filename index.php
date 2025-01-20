@@ -1,6 +1,6 @@
 <?php
     require_once 'koneksi.php';
-    $queryproduk = mysqli_query($conn,"SELECT id, nama, harga, foto, detail FROM produk LIMIT 6");
+    $queryproduk = mysqli_query($conn,"SELECT id, nama, harga, foto, ukuran FROM produk LIMIT 6");
 ?>
 
 <!DOCTYPE html>
@@ -71,16 +71,16 @@
                         <img class="card-img-top" src="assets/<?php echo $data['foto']; ?>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $data['nama']; ?></h5>
-                                    <p class="card-text text-truncate"><?php echo $data['detail']; ?></p>
+                                    <p class="card-text text-truncate"><?php echo $data['ukuran']; ?></p>
                                     <p class="card-text text-harga">Rp<?php echo $data['harga']; ?></p>
-                                    <a href="produk-detail.php?nama=<?php echo $data['nama']; ?>" class="btn warna2 text-white">Lihat Detail</a>
+                                    <a href="product-detail.php?nama=<?php echo $data['nama']; ?>" class="btn warna2 text-white">Lihat Detail</a>
                             </div>
                         </div> 
                     </div>
                     <?php  } ?>
                     <!-- Button see more -->
                      <div class="seemore">
-                    <a href="produk.php" class="btn btn-outline-warning warna1 mt-1 p-1 fs-1 text-white">See More</a>
+                    <a href="product.php" class="btn btn-outline-warning warna1 mt-1 p-1 fs-1 text-white">See More</a>
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
       <div class="container-fluid warna3 mt-5 py-5">
         <div class="container text-center">
             <h3>Tentang Kami</h3>
-            <p class="fs-5 mb-3">Selamat datang di Membatik, destinasi online untuk Anda yang mencari keindahan, kualitas, dan keunikan Batik Indonesia. Kami adalah toko e-commerce yang didedikasikan untuk memperkenalkan dan memasarkan karya seni Batik dari berbagai daerah di Indonesia, sekaligus mendukung para pengrajin lokal yang dengan penuh cinta menciptakan setiap helainya. Menjadi platform terdepan dalam memperkenalkan warisan budaya Batik Indonesia ke seluruh dunia, sembari memberikan pengalaman berbelanja yang nyaman, modern, dan aman. Kami percaya bahwa Batik bukan sekadar kain, tetapi sebuah cerita, tradisi, dan identitas. Dengan setiap pembelian di Membatik, Anda turut mendukung keberlanjutan seni dan budaya Indonesia.</p>
+            <p class="fs-5 mb-3">Selamat datang di Yudikarya, destinasi online untuk Anda yang mencari keindahan, kualitas, dan keunikan Batik Indonesia. Kami adalah toko e-commerce yang didedikasikan untuk memperkenalkan dan memasarkan karya seni Batik dari berbagai daerah di Indonesia, sekaligus mendukung para pengrajin lokal yang dengan penuh cinta menciptakan setiap helainya. Menjadi platform terdepan dalam memperkenalkan warisan budaya Batik Indonesia ke seluruh dunia, sembari memberikan pengalaman berbelanja yang nyaman, modern, dan aman. Kami percaya bahwa Batik bukan sekadar kain, tetapi sebuah cerita, tradisi, dan identitas. Dengan setiap pembelian di Yudikarya, Anda turut mendukung keberlanjutan seni dan budaya Indonesia.</p>
         </div>
       </div>
 
